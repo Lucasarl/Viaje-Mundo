@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora nuestra colección de destinos de viaje por el mundo. Encuentra tu próxima aventura entre ciudades fascinantes, culturas únicas y experiencias inolvidables.">
+  <meta name="keywords" content="destinos, viajes, turismo, ciudades, países, aventura, vacaciones">
+  <meta name="author" content="Viaje Mundo">
+  
+  <title>Destinos de Viaje - Viaje Mundo</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Skip link para accesibilidad -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Ir a la página principal de Viaje Mundo">
+        🌍 Viaje Mundo
+      </a>
+      
+      <nav role="navigation" aria-label="Navegación principal">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+          ☰
+        </button>
+        <ul class="nav" id="main-nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="categoria.html" aria-current="page">Destinos</a></li>
+          <li><a href="det1.html">París</a></li>
+          <li><a href="det2.html">Tokio</a></li>
+          <li><a href="links.html">Enlaces</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main id="main-content" class="main-content" role="main">
+    <!-- Header de página -->
+    <section class="hero" style="padding: var(--spacing-xl) 0;" aria-labelledby="page-heading">
+      <div class="container">
+        <h1 id="page-heading">Destinos de Viaje</h1>
+        <p class="hero-subtitle">Descubre ciudades fascinantes, culturas únicas y experiencias que cambiarán tu forma de ver el mundo</p>
+      </div>
+    </section>
+
+    <!-- Filtros y búsqueda -->
+    <section class="container" aria-labelledby="filter-heading">
+      <div data-aos="fade-up">
+        <h2 id="filter-heading" class="sr-only">Filtros de destinos</h2>
+        <div style="background: var(--surface-color); padding: var(--spacing-lg); border-radius: var(--radius-lg); margin-bottom: var(--spacing-xl);">
+          <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); align-items: center; justify-content: center;">
+            <div style="flex: 1; min-width: 250px;">
+              <label for="search-destinations" class="sr-only">Buscar destinos</label>
+              <input 
+                type="search" 
+                id="search-destinations" 
+                placeholder="Buscar destinos (París, Tokio, Nueva York...)..." 
+                style="width: 100%; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: var(--text-base);"
+                aria-describedby="search-help"
+                autocomplete="off"
+              >
+              <div id="search-help" class="sr-only">Escribe el nombre de un destino para filtrarlo en tiempo real</div>
+            </div>
+            <div>
+              <label for="continent-filter" style="margin-right: var(--spacing-xs); font-weight: 500;">Continente:</label>
+              <select 
+                id="continent-filter" 
+                style="padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-sm);"
+                aria-label="Filtrar destinos por continente"
+              >
+                <option value="">Todos los continentes</option>
+                <option value="europa">Europa</option>
+                <option value="asia">Asia</option>
+                <option value="america">América</option>
+                <option value="africa">África</option>
+                <option value="oceania">Oceanía</option>
+              </select>
+            </div>
+            <div>
+              <button 
+                type="button" 
+                id="clear-filters" 
+                style="padding: var(--spacing-sm) var(--spacing-md); border: 1px solid var(--border-color); background: white; border-radius: var(--radius-sm); cursor: pointer; font-size: var(--text-base);"
+                aria-label="Limpiar todos los filtros"
+              >
+                🗑️ Limpiar
+              </button>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: var(--spacing-md); font-size: var(--text-sm); color: var(--text-light);">
+            💡 Tip: Usa <kbd style="background: var(--surface-color); padding: 2px 4px; border-radius: 3px; font-family: monospace;">Escape</kbd> para limpiar la búsqueda
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lista de destinos -->
+    <section class="container" aria-labelledby="destinations-heading">
+      <div data-aos="fade-up">
+        <h2 id="destinations-heading" class="text-center mb-xl">Nuestros Destinos</h2>
+        <div id="search-results-counter" style="text-align: center; margin-bottom: var(--spacing-lg); font-size: var(--text-sm); color: var(--text-light);">
+          <!-- El contador se actualiza dinámicamente con JavaScript -->
+        </div>
+      </div>
+      
+      <div class="card-grid" role="region" aria-label="Lista de destinos de viaje">
+        <!-- París, Francia -->
+        <article class="card" data-aos="fade-up" data-aos-delay="100" data-continent="europa">
+          <img 
+            src="images/paris-main.jpg" 
+            alt="Torre Eiffel iluminada al atardecer con el río Sena en primer plano"
+            class="card-image"
+            width="400"
+            height="250"
+          >
+          <div class="card-content">
+            <h3>París, Francia</h3>
+            <div style="display: flex; align-items: center; gap: var(--spacing-xs); margin-bottom: var(--spacing-sm); color: var(--text-light);">
+              <span>📍</span>
+              <span>Europa • Francia</span>
+            </div>
+            <p>La Ciudad de la Luz cautiva con su elegancia atemporal. Desde la majestuosa Torre Eiffel hasta los tesoros del Louvre, París ofrece arte, cultura y romance en cada rincón. Pasea por Montmartre, disfruta de la gastronomía francesa y déjate envolver por la magia parisina.</p>
+            <div style="margin: var(--spacing-md) 0;">
+              <strong>Destacados:</strong>
+              <ul style="margin-left: var(--spacing-md); margin-top: var(--spacing-xs);">
+                <li>Torre Eiffel y Campos Elíseos</li>
+                <li>Museo del Louvre y arte mundial</li>
+                <li>Gastronomía francesa auténtica</li>
+              </ul>
+            </div>
+            <a href="det1.html" class="card-link" aria-label="Ver guía completa de París">
+              Explorar París →
+            </a>
+          </div>
+        </article>
+
+        <!-- Tokio, Japón -->
+        <article class="card" data-aos="fade-up" data-aos-delay="200" data-continent="asia">
+          <img 
+            src="images/tokyo-main.jpg" 
+            alt="Vista panorámica del distrito de Shibuya en Tokio con rascacielos y luces de neón"
+            class="card-image"
+            width="400"
+            height="250"
+          >
+          <div class="card-content">
+            <h3>Tokio, Japón</h3>
+            <div style="display: flex; align-items: center; gap: var(--spacing-xs); margin-bottom: var(--spacing-sm); color: var(--text-light);">
+              <span>📍</span>
+              <span>Asia • Japón</span>
+            </div>
+            <p>Una metrópolis fascinante donde los templos tradicionales coexisten con rascacielos futuristas. Tokio es un viaje sensorial a través de la tecnología, la cultura pop, la espiritualidad y una gastronomía que ha conquistado el mundo. Cada distrito ofrece una experiencia única.</p>
+            <div style="margin: var(--spacing-md) 0;">
+              <strong>Destacados:</strong>
+              <ul style="margin-left: var(--spacing-md); margin-top: var(--spacing-xs);">
+                <li>Tradición y modernidad en armonía</li>
+                <li>Gastronomía de nivel mundial</li>
+                <li>Cultura pop y tecnología avanzada</li>
+              </ul>
+            </div>
+            <a href="det2.html" class="card-link" aria-label="Ver guía completa de Tokio">
+              Explorar Tokio →
+            </a>
+          </div>
+        </article>
+
+        <!-- Nueva York, Estados Unidos -->
+        <article class="card" data-aos="fade-up" data-aos-delay="300" data-continent="america">
+          <img 
+            src="images/new-york.jpg" 
+            alt="Skyline de Manhattan con el Empire State Building destacando al amanecer"
+            class="card-image"
+            width="400"
+            height="250"
+          >
+          <div class="card-content">
+            <h3>Nueva York, Estados Unidos</h3>
+            <div style="display: flex; align-items: center; gap: var(--spacing-xs); margin-bottom: var(--spacing-sm); color: var(--text-light);">
+              <span>📍</span>
+              <span>América • Estados Unidos</span>
+            </div>
+            <p>La Gran Manzana nunca duerme. Nueva York es energía pura: Broadway, Central Park, la Estatua de la Libertad y una diversidad cultural incomparable. Desde Wall Street hasta el Bronx, cada barrio cuenta una historia diferente en esta ciudad que nunca para.</p>
+            <div style="margin: var(--spacing-md) 0;">
+              <strong>Destacados:</strong>
+              <ul style="margin-left: var(--spacing-md); margin-top: var(--spacing-xs);">
+                <li>Broadway y entretenimiento mundial</li>
+                <li>Museos de clase mundial</li>
+                <li>Diversidad cultural única</li>
+              </ul>
+            </div>
+            <p style="color: var(--text-light); font-style: italic; margin-bottom: var(--spacing-md);">
+              🚧 Guía completa próximamente
+            </p>
+            <button class="card-link" disabled style="opacity: 0.6; cursor: not-allowed;">
+              Próximamente →
+            </button>
+          </div>
+        </article>
+
+        <!-- Roma, Italia -->
+        <article class="card" data-aos="fade-up" data-aos-delay="400" data-continent="europa">
+          <img 
+            src="images/rome.jpg" 
+            alt="El Coliseo Romano iluminado durante la hora dorada con turistas visitando"
+            class="card-image"
+            width="400"
+            height="250"
+          >
+          <div class="card-content">
+            <h3>Roma, Italia</h3>
+            <div style="display: flex; align-items: center; gap: var(--spacing-xs); margin-bottom: var(--spacing-sm); color: var(--text-light);">
+              <span>📍</span>
+              <span>Europa • Italia</span>
+            </div>
+            <p>La Ciudad Eterna te transporta a través de milenios de historia. Desde el imponente Coliseo hasta la belleza del Vaticano, Roma es un museo al aire libre donde cada piedra cuenta una historia. La cuna del Imperio Romano te espera con su arte, historia y la mejor pasta del mundo.</p>
+            <div style="margin: var(--spacing-md) 0;">
+              <strong>Destacados:</strong>
+              <ul style="margin-left: var(--spacing-md); margin-top: var(--spacing-xs);">
+                <li>Historia antigua y patrimonio mundial</li>
+                <li>Arte renacentista y Vaticano</li>
+                <li>Auténtica cocina italiana</li>
+              </ul>
+            </div>
+            <p style="color: var(--text-light); font-style: italic; margin-bottom: var(--spacing-md);">
+              🚧 Guía completa próximamente
+            </p>
+            <button class="card-link" disabled style="opacity: 0.6; cursor: not-allowed;">
+              Próximamente →
+            </button>
+          </div>
+        </article>
+
+        <!-- Sídney, Australia -->
+        <article class="card" data-aos="fade-up" data-aos-delay="500" data-continent="oceania">
+          <img 
+            src="images/sydney.jpg" 
+            alt="Ópera de Sídney y Harbour Bridge reflejándose en el puerto al atardecer"
+            class="card-image"
+            width="400"
+            height="250"
+          >
+          <div class="card-content">
+            <h3>Sídney, Australia</h3>
+            <div style="display: flex; align-items: center; gap: var(--spacing-xs); margin-bottom: var(--spacing-sm); color: var(--text-light);">
+              <span>📍</span>
+              <span>Oceanía • Australia</span>
+            </div>
+            <p>Una ciudad costera vibrante que combina arquitectura icónica con paisajes naturales espectaculares. La Ópera de Sídney, el Harbour Bridge y las playas doradas crean un escenario perfecto para una experiencia australiana auténtica. Cultura, naturaleza y estilo de vida relajado en perfecta armonía.</p>
+            <div style="margin: var(--spacing-md) 0;">
+              <strong>Destacados:</strong>
+              <ul style="margin-left: var(--spacing-md); margin-top: var(--spacing-xs);">
+                <li>Arquitectura icónica mundial</li>
+                <li>Playas y vida costera</li>
+                <li>Naturaleza y vida salvaje única</li>
+              </ul>
+            </div>
+            <p style="color: var(--text-light); font-style: italic; margin-bottom: var(--spacing-md);">
+              🚧 Guía completa próximamente
+            </p>
+            <button class="card-link" disabled style="opacity: 0.6; cursor: not-allowed;">
+              Próximamente →
+            </button>
+          </div>
+        </article>
+
+        <!-- Marrakech, Marruecos -->
+        <article class="card" data-aos="fade-up" data-aos-delay="600" data-continent="africa">
+          <img 
+            src="images/marrakech.jpg" 
+            alt="Plaza Jemaa el-Fnaa en Marrakech con vendedores locales y la mezquita Kutubía al fondo"
+            class="card-image"
+            width="400"
+            height="250"
+          >
+          <div class="card-content">
+            <h3>Marrakech, Marruecos</h3>
+            <div style="display: flex; align-items: center; gap: var(--spacing-xs); margin-bottom: var(--spacing-sm); color: var(--text-light);">
+              <span>📍</span>
+              <span>África • Marruecos</span>
+            </div>
+            <p>La Perla del Sur te sumerge en una experiencia sensorial única. Los zocos coloridos, la arquitectura bereber, el aroma de las especias y la hospitalidad marroquí crean una atmósfera mágica. Marrakech es un viaje al corazón de la cultura norteafricana.</p>
+            <div style="margin: var(--spacing-md) 0;">
+              <strong>Destacados:</strong>
+              <ul style="margin-left: var(--spacing-md); margin-top: var(--spacing-xs);">
+                <li>Zocos tradicionales y artesanía</li>
+                <li>Arquitectura islámica impresionante</li>
+                <li>Cultura bereber auténtica</li>
+              </ul>
+            </div>
+            <p style="color: var(--text-light); font-style: italic; margin-bottom: var(--spacing-md);">
+              🚧 Guía completa próximamente
+            </p>
+            <button class="card-link" disabled style="opacity: 0.6; cursor: not-allowed;">
+              Próximamente →
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sección de información adicional -->
+    <section class="container" aria-labelledby="info-heading" style="background: var(--surface-color); padding: var(--spacing-xl) var(--spacing-lg); border-radius: var(--radius-lg); margin: var(--spacing-xl) auto;">
+      <div data-aos="fade-up">
+        <h2 id="info-heading" class="text-center">Planifica tu viaje perfecto</h2>
+        <div style="display: grid; gap: var(--spacing-xl); margin-top: var(--spacing-xl);">
+          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">📝</div>
+            <h3>Guías Detalladas</h3>
+            <p>Cada destino incluye información práctica, consejos locales, recomendaciones gastronómicas y los lugares imprescindibles que no puedes perderte.</p>
+          </div>
+          
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🎬</div>
+            <h3>Contenido Visual</h3>
+            <p>Imágenes auténticas y videos que te permitirán conocer cada destino antes de visitarlo. Descubre la belleza de cada lugar a través de nuestro contenido visual.</p>
+          </div>
+          
+          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">💡</div>
+            <h3>Consejos Expertos</h3>
+            <p>Recomendaciones basadas en experiencias reales, presupuestos recomendados, mejor época para visitar y secretos que solo los locales conocen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="container text-center" aria-labelledby="cta-heading">
+      <div data-aos="fade-up">
+        <h2 id="cta-heading">¿No encuentras tu destino ideal?</h2>
+        <p style="font-size: var(--text-lg); margin-bottom: var(--spacing-lg);">
+          Estamos constantemente añadiendo nuevos destinos. ¡Mantente atento para descubrir tu próxima aventura!
+        </p>
+        <a href="index.html" class="cta-button">
+          Volver al inicio
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Viaje Mundo</h3>
+          <p>Tu compañero ideal para descubrir los rincones más hermosos del planeta.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Enlaces Rápidos</h3>
+          <nav aria-label="Enlaces del footer">
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: var(--spacing-xs);"><a href="index.html">Inicio</a></li>
+              <li style="margin-bottom: var(--spacing-xs);"><a href="categoria.html">Destinos</a></li>
+              <li style="margin-bottom: var(--spacing-xs);"><a href="links.html">Enlaces y Fuentes</a></li>
+            </ul>
+          </nav>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Información</h3>
+          <p>📧 info@viajemundo.com</p>
+          <p>📱 +34 123 456 789</p>
+          <p>📍 Madrid, España</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Viaje Mundo. Todos los derechos reservados. | 
+           <a href="links.html">Atribuciones y Enlaces</a> | 
+           Sitio web accesible según WCAG 2.0 AA
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

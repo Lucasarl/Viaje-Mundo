@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre los mejores destinos de viaje por el mundo. Guías, consejos y experiencias únicas para tu próxima aventura.">
+  <meta name="keywords" content="viajes, turismo, destinos, aventura, mundo, vacaciones">
+  <meta name="author" content="Viaje Mundo">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://viajemundo.com/">
+  <meta property="og:title" content="Viaje Mundo - Tu portal de viajes por el mundo">
+  <meta property="og:description" content="Descubre los mejores destinos de viaje por el mundo. Guías, consejos y experiencias únicas para tu próxima aventura.">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://viajemundo.com/">
+  <meta property="twitter:title" content="Viaje Mundo - Tu portal de viajes por el mundo">
+  <meta property="twitter:description" content="Descubre los mejores destinos de viaje por el mundo. Guías, consejos y experiencias únicas para tu próxima aventura.">
+  
+  <title>Viaje Mundo - Tu portal de viajes por el mundo</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Skip link para accesibilidad -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Ir a la página principal de Viaje Mundo">
+        🌍 Viaje Mundo
+      </a>
+      
+      <nav role="navigation" aria-label="Navegación principal">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+          ☰
+        </button>
+        <ul class="nav" id="main-nav">
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="categoria.html">Destinos</a></li>
+          <li><a href="det1.html">París</a></li>
+          <li><a href="det2.html">Tokio</a></li>
+          <li><a href="links.html">Enlaces</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main id="main-content" class="main-content" role="main">
+    <!-- Hero section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <h1 id="hero-heading">Descubre el mundo con nosotros</h1>
+        <p class="hero-subtitle">Tu aventura comienza aquí. Explora destinos únicos, culturas fascinantes y experiencias inolvidables.</p>
+        <a href="categoria.html" class="cta-button" aria-describedby="cta-description">
+          Explorar Destinos
+        </a>
+        <div id="cta-description" class="sr-only">
+          Ir a la página de destinos para ver todos los lugares disponibles
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de introducción -->
+    <section class="container" aria-labelledby="intro-heading">
+      <div data-aos="fade-up">
+        <h2 id="intro-heading" class="text-center">Bienvenido a Viaje Mundo</h2>
+        <p class="text-center" style="font-size: var(--text-lg); margin-bottom: var(--spacing-xl);">
+          Somos tu compañero ideal para descubrir los rincones más hermosos del planeta. 
+          Con años de experiencia en turismo y una pasión genuina por los viajes, 
+          te ofrecemos guías detalladas, consejos prácticos y las mejores recomendaciones 
+          para que cada viaje sea una experiencia única e inolvidable.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sección de destinos destacados -->
+    <section class="container" aria-labelledby="featured-heading">
+      <div data-aos="fade-up">
+        <h2 id="featured-heading" class="text-center">Destinos Destacados</h2>
+        <p class="text-center mb-xl">Explora algunos de nuestros destinos más populares</p>
+      </div>
+      
+      <div class="card-grid">
+        <!-- París -->
+        <article class="card" data-aos="fade-up" data-aos-delay="100">
+          <img 
+            src="images/paris-card.jpg" 
+            alt="Vista panorámica de París con la Torre Eiffel al atardecer"
+            class="card-image"
+            width="400"
+            height="250"
+          >
+          <div class="card-content">
+            <h3>París, Francia</h3>
+            <p>La Ciudad de la Luz te espera con su encanto romántico, museos mundialmente famosos y una gastronomía excepcional.</p>
+            <a href="det1.html" class="card-link" aria-label="Leer más sobre París">
+              Descubrir París →
+            </a>
+          </div>
+        </article>
+
+        <!-- Tokio -->
+        <article class="card" data-aos="fade-up" data-aos-delay="200">
+          <img 
+            src="images/tokyo-card.jpg" 
+            alt="Cruce de Shibuya en Tokio con luces de neón y multitudes"
+            class="card-image"
+            width="400"
+            height="250"
+          >
+          <div class="card-content">
+            <h3>Tokio, Japón</h3>
+            <p>Una metrópolis donde la tradición milenaria se encuentra con la tecnología más avanzada del mundo.</p>
+            <a href="det2.html" class="card-link" aria-label="Leer más sobre Tokio">
+              Descubrir Tokio →
+            </a>
+          </div>
+        </article>
+
+        <!-- Próximamente -->
+        <article class="card" data-aos="fade-up" data-aos-delay="300">
+          <img 
+            src="images/coming-soon.jpg" 
+            alt="Mapa del mundo con pins de destinos turísticos"
+            class="card-image"
+            width="400"
+            height="250"
+          >
+          <div class="card-content">
+            <h3>Próximamente</h3>
+            <p>Estamos preparando más destinos increíbles para ti. ¡Mantente atento a nuestras próximas guías!</p>
+            <a href="categoria.html" class="card-link" aria-label="Ver todos los destinos disponibles">
+              Ver todos →
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sección ¿Por qué elegir Viaje Mundo? -->
+    <section class="container" aria-labelledby="why-us-heading" style="background: var(--surface-color); padding: var(--spacing-xl) var(--spacing-md); border-radius: var(--radius-lg); margin: var(--spacing-xl) auto;">
+      <div data-aos="fade-up">
+        <h2 id="why-us-heading" class="text-center">¿Por qué elegir Viaje Mundo?</h2>
+        <div class="card-grid" style="margin-top: var(--spacing-lg);">
+          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🗺️</div>
+            <h3>Guías Detalladas</h3>
+            <p>Información completa y actualizada sobre cada destino, incluyendo consejos locales y secretos que solo los expertos conocen.</p>
+          </div>
+          
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">✈️</div>
+            <h3>Experiencia Comprobada</h3>
+            <p>Más de 10 años ayudando a viajeros a descubrir el mundo, con miles de experiencias exitosas respaldándonos.</p>
+          </div>
+          
+          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🎯</div>
+            <h3>Recomendaciones Personalizadas</h3>
+            <p>Cada viajero es único, por eso adaptamos nuestras sugerencias a tus intereses y estilo de viaje.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container text-center" aria-labelledby="final-cta-heading">
+      <div data-aos="fade-up">
+        <h2 id="final-cta-heading">¿Listo para tu próxima aventura?</h2>
+        <p style="font-size: var(--text-lg); margin-bottom: var(--spacing-xl);">
+          No esperes más. El mundo está lleno de lugares increíbles esperando ser descubiertos.
+        </p>
+        <a href="categoria.html" class="cta-button">
+          Comenzar mi viaje
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Viaje Mundo</h3>
+          <p>Tu compañero ideal para descubrir los rincones más hermosos del planeta.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Enlaces Rápidos</h3>
+          <nav aria-label="Enlaces del footer">
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: var(--spacing-xs);"><a href="index.html">Inicio</a></li>
+              <li style="margin-bottom: var(--spacing-xs);"><a href="categoria.html">Destinos</a></li>
+              <li style="margin-bottom: var(--spacing-xs);"><a href="links.html">Enlaces y Fuentes</a></li>
+            </ul>
+          </nav>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Información</h3>
+          <p>📧 info@viajemundo.com</p>
+          <p>📱 +34 123 456 789</p>
+          <p>📍 Madrid, España</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Viaje Mundo. Todos los derechos reservados. | 
+           <a href="links.html">Atribuciones y Enlaces</a> | 
+           Sitio web accesible según WCAG 2.0 AA
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

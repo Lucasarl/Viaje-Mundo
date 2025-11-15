@@ -1,0 +1,3 @@
+# Favicon placeholder
+# In a real project, this would be a proper .ico file
+# For this educational project, we'll comment it out in HTML
