@@ -40,13 +40,22 @@
   <main id="main-content" class="main-content" role="main">
     <!-- Header de detalle -->
     <section class="detail-header" aria-labelledby="page-heading">
-      <img 
-        src="images/paris-hero.jpg" 
-        alt="Vista panorámica de París desde Montmartre mostrando la Torre Eiffel y el horizonte de la ciudad durante el atardecer"
-        class="detail-image"
-        width="1200"
-        height="400"
-      >
+      <picture>
+        <!-- Dirección de arte: vertical para móvil, horizontal para escritorio -->
+        <source type="image/avif" srcset="images/optimized/paris-hero-400-vert.avif" media="(max-width: 600px)">
+        <source type="image/webp" srcset="images/optimized/paris-hero-400-vert.webp" media="(max-width: 600px)">
+        <source type="image/jpeg" srcset="images/optimized/paris-hero-400-vert.jpg" media="(max-width: 600px)">
+        <source type="image/avif" srcset="images/optimized/paris-hero-1200.avif" media="(min-width: 601px)">
+        <source type="image/webp" srcset="images/optimized/paris-hero-1200.webp" media="(min-width: 601px)">
+        <img 
+          src="images/optimized/paris-hero-1200.jpg" 
+          alt="Vista panorámica de París desde Montmartre mostrando la Torre Eiffel y el horizonte de la ciudad durante el atardecer"
+          class="detail-image"
+          width="1200"
+          height="400"
+          loading="lazy"
+        >
+      </picture>
       <div class="detail-overlay">
         <div class="container">
           <h1 id="page-heading">París, Francia</h1>
@@ -102,32 +111,47 @@
               <h2>Galería de París</h2>
               <div class="image-gallery">
                 <figure>
-                  <img 
-                    src="images/paris-louvre.jpg" 
-                    alt="Pirámide de cristal del Museo del Louvre con la arquitectura clásica del palacio al fondo durante el día"
-                    width="300"
-                    height="200"
-                  >
+                  <picture>
+                    <source type="image/avif" srcset="images/optimized/paris-louvre-400.avif 400w, images/optimized/paris-louvre-800.avif 800w, images/optimized/paris-louvre-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/webp" srcset="images/optimized/paris-louvre-400.webp 400w, images/optimized/paris-louvre-800.webp 800w, images/optimized/paris-louvre-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <img 
+                      src="images/optimized/paris-louvre-800.jpg" 
+                      alt="Pirámide de cristal del Museo del Louvre con la arquitectura clásica del palacio al fondo durante el día"
+                      width="300"
+                      height="200"
+                      loading="lazy"
+                    >
+                  </picture>
                   <figcaption class="sr-only">Museo del Louvre</figcaption>
                 </figure>
                 
                 <figure>
-                  <img 
-                    src="images/paris-montmartre.jpg" 
-                    alt="Basílica del Sagrado Corazón en Montmartre rodeada de calles empedradas y artistas callejeros"
-                    width="300"
-                    height="200"
-                  >
+                  <picture>
+                    <source type="image/avif" srcset="images/optimized/paris-montmartre-400.avif 400w, images/optimized/paris-montmartre-800.avif 800w, images/optimized/paris-montmartre-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/webp" srcset="images/optimized/paris-montmartre-400.webp 400w, images/optimized/paris-montmartre-800.webp 800w, images/optimized/paris-montmartre-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <img 
+                      src="images/optimized/paris-montmartre-800.jpg" 
+                      alt="Basílica del Sagrado Corazón en Montmartre rodeada de calles empedradas y artistas callejeros"
+                      width="300"
+                      height="200"
+                      loading="lazy"
+                    >
+                  </picture>
                   <figcaption class="sr-only">Montmartre y Sacré-Cœur</figcaption>
                 </figure>
                 
                 <figure>
-                  <img 
-                    src="images/paris-seine.jpg" 
-                    alt="Río Sena con barcos navegando y los puentes históricos de París al atardecer"
-                    width="300"
-                    height="200"
-                  >
+                  <picture>
+                    <source type="image/avif" srcset="images/optimized/paris-seine-400.avif 400w, images/optimized/paris-seine-800.avif 800w, images/optimized/paris-seine-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/webp" srcset="images/optimized/paris-seine-400.webp 400w, images/optimized/paris-seine-800.webp 800w, images/optimized/paris-seine-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <img 
+                      src="images/optimized/paris-seine-800.jpg" 
+                      alt="Río Sena con barcos navegando y los puentes históricos de París al atardecer"
+                      width="300"
+                      height="200"
+                      loading="lazy"
+                    >
+                  </picture>
                   <figcaption class="sr-only">El río Sena</figcaption>
                 </figure>
               </div>

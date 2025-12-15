@@ -40,13 +40,18 @@
   <main id="main-content" class="main-content" role="main">
     <!-- Header de detalle -->
     <section class="detail-header" aria-labelledby="page-heading">
-      <img 
-        src="images/tokyo-hero.jpg" 
-        alt="Vista nocturna del distrito de Shinjuku en Tokio con rascacielos iluminados, pantallas LED y el bullicioso tráfico urbano"
-        class="detail-image"
-        width="1200"
-        height="400"
-      >
+      <picture>
+        <source type="image/avif" srcset="images/optimized/tokyo-hero-400.avif 400w, images/optimized/tokyo-hero-800.avif 800w, images/optimized/tokyo-hero-1200.avif 1200w" sizes="100vw">
+        <source type="image/webp" srcset="images/optimized/tokyo-hero-400.webp 400w, images/optimized/tokyo-hero-800.webp 800w, images/optimized/tokyo-hero-1200.webp 1200w" sizes="100vw">
+        <img 
+          src="images/optimized/tokyo-hero-800.jpg" 
+          alt="Vista nocturna del distrito de Shinjuku en Tokio con rascacielos iluminados, pantallas LED y el bullicioso tráfico urbano"
+          class="detail-image"
+          width="1200"
+          height="400"
+          loading="lazy"
+        >
+      </picture>
       <div class="detail-overlay">
         <div class="container">
           <h1 id="page-heading">Tokio, Japón</h1>
@@ -102,32 +107,47 @@
               <h2>Galería de Tokio</h2>
               <div class="image-gallery">
                 <figure>
-                  <img 
-                    src="images/tokyo-temple.jpg" 
-                    alt="Templo Senso-ji en Asakusa con visitantes locales y turistas caminando por el camino tradicional de piedra"
-                    width="300"
-                    height="200"
-                  >
+                  <picture>
+                    <source type="image/avif" srcset="images/optimized/tokyo-temple-400.avif 400w, images/optimized/tokyo-temple-800.avif 800w, images/optimized/tokyo-temple-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/webp" srcset="images/optimized/tokyo-temple-400.webp 400w, images/optimized/tokyo-temple-800.webp 800w, images/optimized/tokyo-temple-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <img 
+                      src="images/optimized/tokyo-temple-800.jpg" 
+                      alt="Templo Senso-ji en Asakusa con visitantes locales y turistas caminando por el camino tradicional de piedra"
+                      width="300"
+                      height="200"
+                      loading="lazy"
+                    >
+                  </picture>
                   <figcaption class="sr-only">Templo Senso-ji en Asakusa</figcaption>
                 </figure>
                 
                 <figure>
-                  <img 
-                    src="images/tokyo-shibuya.jpg" 
-                    alt="El famoso cruce de Shibuya durante la hora punta con cientos de personas cruzando simultáneamente bajo luces de neón"
-                    width="300"
-                    height="200"
-                  >
+                  <picture>
+                    <source type="image/avif" srcset="images/optimized/tokyo-shibuya-400.avif 400w, images/optimized/tokyo-shibuya-800.avif 800w, images/optimized/tokyo-shibuya-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/webp" srcset="images/optimized/tokyo-shibuya-400.webp 400w, images/optimized/tokyo-shibuya-800.webp 800w, images/optimized/tokyo-shibuya-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <img 
+                      src="images/optimized/tokyo-shibuya-800.jpg" 
+                      alt="El famoso cruce de Shibuya durante la hora punta con cientos de personas cruzando simultáneamente bajo luces de neón"
+                      width="300"
+                      height="200"
+                      loading="lazy"
+                    >
+                  </picture>
                   <figcaption class="sr-only">Cruce de Shibuya</figcaption>
                 </figure>
                 
                 <figure>
-                  <img 
-                    src="images/tokyo-cherry.jpg" 
-                    alt="Parque Ueno bajo los cerezos en flor"
-                    width="300"
-                    height="200"
-                  >
+                  <picture>
+                    <source type="image/avif" srcset="images/optimized/tokyo-cherry-400.avif 400w, images/optimized/tokyo-cherry-800.avif 800w, images/optimized/tokyo-cherry-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/webp" srcset="images/optimized/tokyo-cherry-400.webp 400w, images/optimized/tokyo-cherry-800.webp 800w, images/optimized/tokyo-cherry-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <img 
+                      src="images/optimized/tokyo-cherry-800.jpg" 
+                      alt="Parque Ueno bajo los cerezos en flor"
+                      width="300"
+                      height="200"
+                      loading="lazy"
+                    >
+                  </picture>
                   <figcaption class="sr-only">Sakura en el parque Ueno</figcaption>
                 </figure>
               </div>
