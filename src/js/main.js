@@ -10,6 +10,7 @@ class ViajeMundo {
     this.setupMenuToggle();
     this.setupScrollEffects();
     this.setupImageLazyLoading();
+    this.setupSmoothScroll();
     this.setupAccessibilityEnhancements();
     this.setupSearchAndFilters();
   }
@@ -29,19 +30,7 @@ class ViajeMundo {
     window.addEventListener('resize', this.debounce(this.handleResize.bind(this), 250));
   }
 
-  // Inicializar animaciones AOS
-  initializeAOS() {
-    if (typeof AOS !== 'undefined') {
-      AOS.init({
-        duration: 800,
-        easing: 'ease-out-cubic',
-        once: true,
-        offset: 100
-      });
-    } else {
-      console.log('AOS no esta disponible - animaciones deshabilitadas');
-    }
-  }
+  // Función de animaciones eliminada - AOS removido para mejorar rendimiento
 
   // Inicializar Swiper para carruseles
   initializeSwiper() {
@@ -129,28 +118,14 @@ class ViajeMundo {
     }
   }
 
-  // Efectos de scroll
+  // Efectos de scroll - usando el handler throttled
   setupScrollEffects() {
-    const header = document.querySelector('.header');
-    
-    if (header) {
-      let lastScrollY = window.scrollY;
-      
-      window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        
-        // Agregar clase para header con scroll
-        if (currentScrollY > 100) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-        
-        lastScrollY = currentScrollY;
-      });
-    }
+    // El scroll ya está manejado por handleScroll() con throttling
+    // Eliminamos el handler duplicado para evitar forced reflows
+  }
 
-    // Smooth scroll para enlaces internos
+  // Smooth scroll para enlaces internos
+  setupSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -528,8 +503,16 @@ class ViajeMundo {
 
   // Manejar evento scroll
   handleScroll() {
-    const scrolled = window.scrollY > 50;
-    document.body.classList.toggle('scrolled', scrolled);
+    const scrollY = window.scrollY;
+    
+    // Body scroll class
+    document.body.classList.toggle('scrolled', scrollY > 50);
+    
+    // Header scroll class  
+    const header = document.querySelector('.header');
+    if (header) {
+      header.classList.toggle('scrolled', scrollY > 100);
+    }
   }
 
   // Manejar evento resize

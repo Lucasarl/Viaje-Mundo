@@ -53,7 +53,7 @@
 
     <!-- Filtros y búsqueda -->
     <section class="container" aria-labelledby="filter-heading">
-      <div data-aos="fade-up">
+      <div>
         <h2 id="filter-heading" class="sr-only">Filtros de destinos</h2>
         <div style="background: var(--surface-color); padding: var(--spacing-lg); border-radius: var(--radius-lg); margin-bottom: var(--spacing-xl);">
           <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); align-items: center; justify-content: center;">
@@ -104,7 +104,7 @@
 
     <!-- Lista de destinos -->
     <section class="container" aria-labelledby="destinations-heading">
-      <div data-aos="fade-up">
+      <div>
         <h2 id="destinations-heading" class="text-center mb-xl">Nuestros Destinos</h2>
         <div id="search-results-counter" style="text-align: center; margin-bottom: var(--spacing-lg); font-size: var(--text-sm); color: var(--text-light);">
           <!-- El contador se actualiza dinámicamente con JavaScript -->
@@ -113,10 +113,12 @@
       
       <div class="card-grid" role="region" aria-label="Lista de destinos de viaje">
         <!-- París, Francia -->
-        <article class="card" data-aos="fade-up" data-aos-delay="100" data-continent="europa">
+        <article class="card" data-continent="europa">
           <picture>
-            <source type="image/avif" srcset="images/optimized/paris-main-400.avif 400w, images/optimized/paris-main-800.avif 800w, images/optimized/paris-main-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-            <source type="image/webp" srcset="images/optimized/paris-main-400.webp 400w, images/optimized/paris-main-800.webp 800w, images/optimized/paris-main-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+            <source type="image/avif" srcset="images/optimized/paris-main-400.avif" media="(max-width: 768px)">
+            <source type="image/avif" srcset="images/optimized/paris-main-800.avif">
+            <source type="image/webp" srcset="images/optimized/paris-main-400.webp" media="(max-width: 768px)">
+            <source type="image/webp" srcset="images/optimized/paris-main-800.webp">
             <img 
               src="images/optimized/paris-main-800.jpg" 
               alt="Torre Eiffel iluminada al atardecer con el río Sena en primer plano"
@@ -148,10 +150,12 @@
         </article>
 
         <!-- Tokio, Japón -->
-        <article class="card" data-aos="fade-up" data-aos-delay="200" data-continent="asia">
+        <article class="card" data-continent="asia">
           <picture>
-            <source type="image/avif" srcset="images/optimized/tokyo-main-400.avif 400w, images/optimized/tokyo-main-800.avif 800w, images/optimized/tokyo-main-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-            <source type="image/webp" srcset="images/optimized/tokyo-main-400.webp 400w, images/optimized/tokyo-main-800.webp 800w, images/optimized/tokyo-main-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+            <source type="image/avif" srcset="images/optimized/tokyo-main-400.avif" media="(max-width: 768px)">
+            <source type="image/avif" srcset="images/optimized/tokyo-main-800.avif">
+            <source type="image/webp" srcset="images/optimized/tokyo-main-400.webp" media="(max-width: 768px)">
+            <source type="image/webp" srcset="images/optimized/tokyo-main-800.webp">
             <img 
               src="images/optimized/tokyo-main-800.jpg" 
               alt="Vista panorámica del distrito de Shibuya en Tokio con rascacielos y luces de neón"
@@ -183,10 +187,12 @@
         </article>
 
         <!-- Nueva York, Estados Unidos -->
-        <article class="card" data-aos="fade-up" data-aos-delay="300" data-continent="america">
+        <article class="card" data-continent="america">
           <picture>
-            <source type="image/avif" srcset="images/optimized/new-york-400.avif 400w, images/optimized/new-york-800.avif 800w, images/optimized/new-york-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-            <source type="image/webp" srcset="images/optimized/new-york-400.webp 400w, images/optimized/new-york-800.webp 800w, images/optimized/new-york-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+            <source type="image/avif" srcset="images/optimized/new-york-400.avif" media="(max-width: 768px)">
+            <source type="image/avif" srcset="images/optimized/new-york-800.avif">
+            <source type="image/webp" srcset="images/optimized/new-york-400.webp" media="(max-width: 768px)">
+            <source type="image/webp" srcset="images/optimized/new-york-800.webp">
             <img 
               src="images/optimized/new-york-800.jpg" 
               alt="Skyline de Manhattan con el Empire State Building destacando al amanecer"
@@ -221,10 +227,12 @@
         </article>
 
         <!-- Roma, Italia -->
-        <article class="card" data-aos="fade-up" data-aos-delay="400" data-continent="europa">
+        <article class="card" data-continent="europa">
           <picture>
-            <source type="image/avif" srcset="images/optimized/rome-400.avif 400w, images/optimized/rome-800.avif 800w, images/optimized/rome-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-            <source type="image/webp" srcset="images/optimized/rome-400.webp 400w, images/optimized/rome-800.webp 800w, images/optimized/rome-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+            <source type="image/avif" srcset="images/optimized/rome-400.avif" media="(max-width: 768px)">
+            <source type="image/avif" srcset="images/optimized/rome-800.avif">
+            <source type="image/webp" srcset="images/optimized/rome-400.webp" media="(max-width: 768px)">
+            <source type="image/webp" srcset="images/optimized/rome-800.webp">
             <img 
               src="images/optimized/rome-800.jpg" 
               alt="El Coliseo Romano iluminado durante la hora dorada con turistas visitando"
@@ -259,10 +267,12 @@
         </article>
 
         <!-- Sídney, Australia -->
-        <article class="card" data-aos="fade-up" data-aos-delay="500" data-continent="oceania">
+        <article class="card" data-continent="oceania">
           <picture>
-            <source type="image/avif" srcset="images/optimized/sydney-400.avif 400w, images/optimized/sydney-800.avif 800w, images/optimized/sydney-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-            <source type="image/webp" srcset="images/optimized/sydney-400.webp 400w, images/optimized/sydney-800.webp 800w, images/optimized/sydney-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+            <source type="image/avif" srcset="images/optimized/sydney-400.avif" media="(max-width: 768px)">
+            <source type="image/avif" srcset="images/optimized/sydney-800.avif">
+            <source type="image/webp" srcset="images/optimized/sydney-400.webp" media="(max-width: 768px)">
+            <source type="image/webp" srcset="images/optimized/sydney-800.webp">
             <img 
               src="images/optimized/sydney-800.jpg" 
               alt="Ópera de Sídney y Harbour Bridge reflejándose en el puerto al atardecer"
@@ -297,10 +307,12 @@
         </article>
 
         <!-- Marrakech, Marruecos -->
-        <article class="card" data-aos="fade-up" data-aos-delay="600" data-continent="africa">
+        <article class="card" data-continent="africa">
           <picture>
-            <source type="image/avif" srcset="images/optimized/marrakech-400.avif 400w, images/optimized/marrakech-800.avif 800w, images/optimized/marrakech-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-            <source type="image/webp" srcset="images/optimized/marrakech-400.webp 400w, images/optimized/marrakech-800.webp 800w, images/optimized/marrakech-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+            <source type="image/avif" srcset="images/optimized/marrakech-400.avif" media="(max-width: 768px)">
+            <source type="image/avif" srcset="images/optimized/marrakech-800.avif">
+            <source type="image/webp" srcset="images/optimized/marrakech-400.webp" media="(max-width: 768px)">
+            <source type="image/webp" srcset="images/optimized/marrakech-800.webp">
             <img 
               src="images/optimized/marrakech-800.jpg" 
               alt="Plaza Jemaa el-Fnaa en Marrakech con vendedores locales y la mezquita Kutubía al fondo"
@@ -338,22 +350,22 @@
 
     <!-- Sección de información adicional -->
     <section class="container" aria-labelledby="info-heading" style="background: var(--surface-color); padding: var(--spacing-xl) var(--spacing-lg); border-radius: var(--radius-lg); margin: var(--spacing-xl) auto;">
-      <div data-aos="fade-up">
+      <div>
         <h2 id="info-heading" class="text-center">Planifica tu viaje perfecto</h2>
         <div style="display: grid; gap: var(--spacing-xl); margin-top: var(--spacing-xl);">
-          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-center">
             <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">📝</div>
             <h3>Guías Detalladas</h3>
             <p>Cada destino incluye información práctica, consejos locales, recomendaciones gastronómicas y los lugares imprescindibles que no puedes perderte.</p>
           </div>
           
-          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-center">
             <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🎬</div>
             <h3>Contenido Visual</h3>
             <p>Imágenes auténticas y videos que te permitirán conocer cada destino antes de visitarlo. Descubre la belleza de cada lugar a través de nuestro contenido visual.</p>
           </div>
           
-          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-center">
             <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">💡</div>
             <h3>Consejos Expertos</h3>
             <p>Recomendaciones basadas en experiencias reales, presupuestos recomendados, mejor época para visitar y secretos que solo los locales conocen.</p>
@@ -364,7 +376,7 @@
 
     <!-- Call to action -->
     <section class="container text-center" aria-labelledby="cta-heading">
-      <div data-aos="fade-up">
+      <div>
         <h2 id="cta-heading">¿No encuentras tu destino ideal?</h2>
         <p style="font-size: var(--text-lg); margin-bottom: var(--spacing-lg);">
           Estamos constantemente añadiendo nuevos destinos. ¡Mantente atento para descubrir tu próxima aventura!
