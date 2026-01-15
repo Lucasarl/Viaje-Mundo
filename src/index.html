@@ -20,6 +20,11 @@
   <meta property="twitter:description" content="Descubre los mejores destinos de viaje por el mundo. Guías, consejos y experiencias únicas para tu próxima aventura.">
   
   <title>Viaje Mundo - Tu portal de viajes por el mundo</title>
+  
+  <!-- Preload de recursos críticos para mejorar el critical rendering path -->
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
+  
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   
@@ -246,7 +251,8 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script type="module" src="js/main.js"></script>
+  <!-- Scripts optimizados para rendimiento -->
+  <!-- Usar defer en lugar de async para mantener el orden de ejecución -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -8,6 +8,12 @@
   <meta name="author" content="Viaje Mundo">
   
   <title>Tokio, Japón - Guía Completa de Viaje | Viaje Mundo</title>
+  
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
+  <link rel="preload" href="images/optimized/tokyo-hero-1200.avif" as="image">
+  
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -49,7 +55,7 @@
           class="detail-image"
           width="1200"
           height="400"
-          loading="lazy"
+          fetchpriority="high"
         >
       </picture>
       <div class="detail-overlay">
@@ -88,14 +94,13 @@
             <div data-aos="fade-up">
               <h2>Tokio en vídeo: Una metrópolis fascinante</h2>
               <div class="video-container">
-                <iframe 
-                  src="https://www.youtube.com/embed/cQ1eBWoZXFE" 
-                  title="Tokio, Japón - Entre Tradición y Modernidad | Guía de Viaje"
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen
-                  loading="lazy">
-                </iframe>
+                <div style="text-align: center; padding: 2rem; background: #f5f5f5; border-radius: 8px;">
+                  <p style="margin-bottom: 1rem;">Ver video en YouTube:</p>
+                  <a href="https://www.youtube.com/watch?v=cQ1eBWoZXFE" target="_blank" rel="noopener noreferrer" 
+                     style="display: inline-block; background: #ff0000; color: white; padding: 12px 24px; border-radius: 4px; text-decoration: none;">
+                    ▶ Ver "Tokio - Entre Tradición y Modernidad"
+                  </a>
+                </div>
               </div>
               <p style="font-size: var(--text-sm); color: var(--text-light); text-align: center; margin-top: var(--spacing-sm);">
                 Video: "Tokio - Entre Tradición y Modernidad" - Un viaje visual por la capital japonesa
@@ -108,14 +113,15 @@
               <div class="image-gallery">
                 <figure>
                   <picture>
-                    <source type="image/avif" srcset="images/optimized/tokyo-temple-400.avif 400w, images/optimized/tokyo-temple-800.avif 800w, images/optimized/tokyo-temple-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-                    <source type="image/webp" srcset="images/optimized/tokyo-temple-400.webp 400w, images/optimized/tokyo-temple-800.webp 800w, images/optimized/tokyo-temple-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/avif" data-srcset="images/optimized/tokyo-temple-400.avif 400w, images/optimized/tokyo-temple-800.avif 800w, images/optimized/tokyo-temple-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/webp" data-srcset="images/optimized/tokyo-temple-400.webp 400w, images/optimized/tokyo-temple-800.webp 800w, images/optimized/tokyo-temple-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
                     <img 
-                      src="images/optimized/tokyo-temple-800.jpg" 
+                      data-src="images/optimized/tokyo-temple-800.jpg" 
                       alt="Templo Senso-ji en Asakusa con visitantes locales y turistas caminando por el camino tradicional de piedra"
                       width="300"
                       height="200"
-                      loading="lazy"
+                      class="lazy-load"
+                      style="background-color: #f0f0f0;"
                     >
                   </picture>
                   <figcaption class="sr-only">Templo Senso-ji en Asakusa</figcaption>
@@ -123,14 +129,15 @@
                 
                 <figure>
                   <picture>
-                    <source type="image/avif" srcset="images/optimized/tokyo-shibuya-400.avif 400w, images/optimized/tokyo-shibuya-800.avif 800w, images/optimized/tokyo-shibuya-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-                    <source type="image/webp" srcset="images/optimized/tokyo-shibuya-400.webp 400w, images/optimized/tokyo-shibuya-800.webp 800w, images/optimized/tokyo-shibuya-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/avif" data-srcset="images/optimized/tokyo-shibuya-400.avif 400w, images/optimized/tokyo-shibuya-800.avif 800w, images/optimized/tokyo-shibuya-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/webp" data-srcset="images/optimized/tokyo-shibuya-400.webp 400w, images/optimized/tokyo-shibuya-800.webp 800w, images/optimized/tokyo-shibuya-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
                     <img 
-                      src="images/optimized/tokyo-shibuya-800.jpg" 
+                      data-src="images/optimized/tokyo-shibuya-800.jpg" 
                       alt="El famoso cruce de Shibuya durante la hora punta con cientos de personas cruzando simultáneamente bajo luces de neón"
                       width="300"
                       height="200"
-                      loading="lazy"
+                      class="lazy-load"
+                      style="background-color: #f0f0f0;"
                     >
                   </picture>
                   <figcaption class="sr-only">Cruce de Shibuya</figcaption>
@@ -138,14 +145,15 @@
                 
                 <figure>
                   <picture>
-                    <source type="image/avif" srcset="images/optimized/tokyo-cherry-400.avif 400w, images/optimized/tokyo-cherry-800.avif 800w, images/optimized/tokyo-cherry-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-                    <source type="image/webp" srcset="images/optimized/tokyo-cherry-400.webp 400w, images/optimized/tokyo-cherry-800.webp 800w, images/optimized/tokyo-cherry-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/avif" data-srcset="images/optimized/tokyo-cherry-400.avif 400w, images/optimized/tokyo-cherry-800.avif 800w, images/optimized/tokyo-cherry-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/webp" data-srcset="images/optimized/tokyo-cherry-400.webp 400w, images/optimized/tokyo-cherry-800.webp 800w, images/optimized/tokyo-cherry-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
                     <img 
-                      src="images/optimized/tokyo-cherry-800.jpg" 
+                      data-src="images/optimized/tokyo-cherry-800.jpg" 
                       alt="Parque Ueno bajo los cerezos en flor"
                       width="300"
                       height="200"
-                      loading="lazy"
+                      class="lazy-load"
+                      style="background-color: #f0f0f0;"
                     >
                   </picture>
                   <figcaption class="sr-only">Sakura en el parque Ueno</figcaption>
@@ -318,7 +326,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script type="module" src="js/main.js"></script>
+  <!-- Scripts optimizados para rendimiento -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>

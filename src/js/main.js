@@ -1,11 +1,3 @@
-// Importar dependencias externas
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
-// Configurar Swiper como variable global para evitar problemas de importación
-// En un entorno de producción real, se importaría correctamente desde CDN o package
-let Swiper = null;
-
 // Clase principal para manejar la funcionalidad del sitio
 class ViajeMundo {
   constructor() {
@@ -15,8 +7,6 @@ class ViajeMundo {
   // Inicializar todas las funcionalidades
   init() {
     this.setupEventListeners();
-    this.initializeAOS();
-    this.initializeSwiper();
     this.setupMenuToggle();
     this.setupScrollEffects();
     this.setupImageLazyLoading();
@@ -26,9 +16,9 @@ class ViajeMundo {
 
   // Event listeners principales
   setupEventListeners() {
-    // Eventos que se ejecutan cuando el DOM está listo
+    // Eventos que se ejecutan cuando el DOM esta listo
     document.addEventListener('DOMContentLoaded', () => {
-      console.log('🌍 Viaje Mundo - Sitio web cargado correctamente');
+      console.log('Viaje Mundo - Sitio web cargado correctamente');
       this.highlightCurrentPage();
     });
 
@@ -41,19 +31,23 @@ class ViajeMundo {
 
   // Inicializar animaciones AOS
   initializeAOS() {
-    AOS.init({
-      duration: 800,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 100
-    });
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 100
+      });
+    } else {
+      console.log('AOS no esta disponible - animaciones deshabilitadas');
+    }
   }
 
   // Inicializar Swiper para carruseles
   initializeSwiper() {
-    // Solo inicializar si Swiper está disponible
+    // Solo inicializar si Swiper esta disponible
     if (typeof Swiper === 'undefined' || !Swiper) {
-      console.log('💡 Swiper no está disponible - carruseles deshabilitados');
+      console.log('Swiper no esta disponible - carruseles deshabilitados');
       return;
     }
     
@@ -89,7 +83,7 @@ class ViajeMundo {
     });
   }
 
-  // Configurar menu toggle para móvil
+  // Configurar menu toggle para movil
   setupMenuToggle() {
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
@@ -107,15 +101,15 @@ class ViajeMundo {
         // Cambiar icono del menu
         const icon = menuToggle.querySelector('i') || menuToggle;
         if (expanded) {
-          icon.innerHTML = '✕';
-          icon.setAttribute('aria-label', 'Cerrar menú');
+          icon.innerHTML = 'X';
+          icon.setAttribute('aria-label', 'Cerrar menu');
         } else {
-          icon.innerHTML = '☰';
-          icon.setAttribute('aria-label', 'Abrir menú');
+          icon.innerHTML = '=';
+          icon.setAttribute('aria-label', 'Abrir menu');
         }
       });
 
-      // Cerrar menú al hacer click en un enlace
+      // Cerrar menu al hacer click en un enlace
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
           nav.classList.remove('nav-open');
@@ -124,7 +118,7 @@ class ViajeMundo {
         });
       });
 
-      // Cerrar menú al hacer click fuera
+      // Cerrar menu al hacer click fuera
       document.addEventListener('click', (e) => {
         if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
           nav.classList.remove('nav-open');
@@ -173,7 +167,7 @@ class ViajeMundo {
     });
   }
 
-  // Lazy loading para imágenes
+  // Lazy loading simple y eficiente
   setupImageLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
     
@@ -182,27 +176,75 @@ class ViajeMundo {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const img = entry.target;
-            img.src = img.dataset.src;
-            img.classList.remove('lazy');
+            
+            // Cargar imagen principal
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+            }
+            
+            // Cargar sources del picture
+            const picture = img.closest('picture');
+            if (picture) {
+              const sources = picture.querySelectorAll('source[data-srcset]');
+              sources.forEach(source => {
+                source.srcset = source.dataset.srcset;
+                source.removeAttribute('data-srcset');
+              });
+            }
+            
+            img.classList.remove('lazy-load');
             img.classList.add('loaded');
             observer.unobserve(img);
+            
+            // Animacion de aparicion
+            img.addEventListener('load', () => {
+              img.style.opacity = '1';
+            });
           }
         });
+      }, {
+        // Cargar imagenes 300px antes de que entren al viewport para mejor UX
+        rootMargin: '300px 0px',
+        threshold: 0.01
       });
 
-      images.forEach(img => imageObserver.observe(img));
+      images.forEach(img => {
+        // Anadir placeholder y transicion mientras carga
+        if (img.classList.contains('lazy-load')) {
+          img.style.opacity = '0';
+          img.style.transition = 'opacity 0.3s ease-in-out';
+        }
+        imageObserver.observe(img);
+      });
+      
     } else {
       // Fallback para navegadores sin IntersectionObserver
       images.forEach(img => {
-        img.src = img.dataset.src;
-        img.classList.remove('lazy');
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+        
+        // Manejar picture elements
+        const picture = img.closest('picture');
+        if (picture) {
+          const sources = picture.querySelectorAll('source[data-srcset]');
+          sources.forEach(source => {
+            source.srcset = source.dataset.srcset;
+            source.removeAttribute('data-srcset');
+          });
+        }
+        
+        img.classList.remove('lazy-load');
+        img.classList.add('loaded');
       });
     }
   }
 
   // Mejoras de accesibilidad
   setupAccessibilityEnhancements() {
-    // Mejorar navegación por teclado
+    // Mejorar navegacion por teclado
     this.enhanceKeyboardNavigation();
     
     // Configurar skip links
@@ -224,7 +266,7 @@ class ViajeMundo {
       document.body.classList.remove('keyboard-navigation');
     });
 
-    // Escape para cerrar modales/menús
+    // Escape para cerrar modales/menus
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         const openNav = document.querySelector('.nav.nav-open');
@@ -252,7 +294,7 @@ class ViajeMundo {
   }
 
   setupAriaLive() {
-    // Crear región de notificaciones para screen readers
+    // Crear region de notificaciones para screen readers
     const liveRegion = document.createElement('div');
     liveRegion.setAttribute('aria-live', 'polite');
     liveRegion.setAttribute('aria-atomic', 'true');
@@ -267,14 +309,14 @@ class ViajeMundo {
     if (liveRegion) {
       liveRegion.textContent = message;
       
-      // Limpiar después de un momento
+      // Limpiar despues de un momento
       setTimeout(() => {
         liveRegion.textContent = '';
       }, 1000);
     }
   }
 
-  // Resaltar página actual en navegación
+  // Resaltar pagina actual en navegacion
   highlightCurrentPage() {
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav a');
@@ -288,17 +330,17 @@ class ViajeMundo {
     });
   }
 
-  // Configurar búsqueda y filtros en página de categorías
+  // Configurar busqueda y filtros en pagina de categorias
   setupSearchAndFilters() {
     const searchInput = document.getElementById('search-destinations');
     const continentFilter = document.getElementById('continent-filter');
     const destinationCards = document.querySelectorAll('[data-continent]');
 
     if (!searchInput || !continentFilter || destinationCards.length === 0) {
-      return; // No estamos en la página de categorías
+      return; // No estamos en la pagina de categorias
     }
 
-    // Función para filtrar destinos
+    // Funcion para filtrar destinos
     const filterDestinations = () => {
       const searchTerm = searchInput.value.toLowerCase().trim();
       const selectedContinent = continentFilter.value.toLowerCase();
@@ -309,7 +351,7 @@ class ViajeMundo {
         const cardText = card.textContent.toLowerCase();
         const cardContinent = card.getAttribute('data-continent');
         
-        // Verificar si coincide con la búsqueda de texto
+        // Verificar si coincide con la busqueda de texto
         const matchesSearch = searchTerm === '' || cardText.includes(searchTerm);
         
         // Verificar si coincide con el filtro de continente
@@ -341,7 +383,7 @@ class ViajeMundo {
     searchInput.addEventListener('input', this.debounce(filterDestinations, 300));
     continentFilter.addEventListener('change', filterDestinations);
 
-    // Botón de limpiar filtros
+    // Boton de limpiar filtros
     const clearButton = document.getElementById('clear-filters');
     if (clearButton) {
       clearButton.addEventListener('click', () => {
@@ -380,9 +422,9 @@ class ViajeMundo {
       noResultsMsg.className = 'no-results';
       noResultsMsg.innerHTML = `
         <div style="text-align: center; padding: var(--spacing-xl); background: var(--surface-color); border-radius: var(--radius-lg); margin: var(--spacing-lg) 0;">
-          <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🔍</div>
+          <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">?</div>
           <h3>No se encontraron destinos</h3>
-          <p>Prueba con otros términos de búsqueda o selecciona un continente diferente.</p>
+          <p>Prueba con otros terminos de busqueda o selecciona un continente diferente.</p>
           <button id="clear-from-no-results" 
                   style="background: var(--primary-color); color: white; border: none; padding: var(--spacing-sm) var(--spacing-md); border-radius: var(--radius-sm); cursor: pointer; margin-top: var(--spacing-md);">
             Limpiar filtros
@@ -390,13 +432,13 @@ class ViajeMundo {
         </div>
       `;
       
-      // Insertar después del grid de tarjetas
+      // Insertar despues del grid de tarjetas
       const cardGrid = document.querySelector('.card-grid');
       if (cardGrid) {
         cardGrid.parentNode.insertBefore(noResultsMsg, cardGrid.nextSibling);
       }
       
-      // Agregar event listener al botón de limpiar
+      // Agregar event listener al boton de limpiar
       const clearFromNoResults = noResultsMsg.querySelector('#clear-from-no-results');
       if (clearFromNoResults) {
         clearFromNoResults.addEventListener('click', () => {
@@ -416,13 +458,13 @@ class ViajeMundo {
     }
   }
 
-  // Anunciar resultados de búsqueda a screen readers
+  // Anunciar resultados de busqueda a screen readers
   announceSearchResults(count) {
     let message;
     if (count === 0) {
-      message = 'No se encontraron destinos que coincidan con tu búsqueda';
+      message = 'No se encontraron destinos que coincidan con tu busqueda';
     } else if (count === 1) {
-      message = 'Se encontró 1 destino';
+      message = 'Se encontro 1 destino';
     } else {
       message = `Se encontraron ${count} destinos`;
     }
@@ -444,7 +486,7 @@ class ViajeMundo {
     }
   }
 
-  // Agregar estilos CSS para las animaciones de búsqueda
+  // Agregar estilos CSS para las animaciones de busqueda
   addSearchStyles() {
     if (document.getElementById('search-styles')) return;
     
@@ -527,13 +569,13 @@ class ViajeMundo {
     };
   }
 
-  // Método para mostrar notificaciones
+  // Metodo para mostrar notificaciones
   showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
     
-    // Agregar estilos inline básicos
+    // Agregar estilos inline basicos
     Object.assign(notification.style, {
       position: 'fixed',
       top: '20px',
@@ -554,7 +596,7 @@ class ViajeMundo {
       notification.style.transform = 'translateX(0)';
     });
 
-    // Remover después de 3 segundos
+    // Remover despues de 3 segundos
     setTimeout(() => {
       notification.style.transform = 'translateX(100%)';
       setTimeout(() => {
@@ -568,7 +610,7 @@ class ViajeMundo {
     this.announceToScreenReader(message);
   }
 
-  // Método para cargar contenido dinámico (ejemplo)
+  // Metodo para cargar contenido dinamico (ejemplo)
   async loadDynamicContent(url) {
     try {
       const response = await fetch(url);
@@ -585,11 +627,8 @@ class ViajeMundo {
   }
 }
 
-// Inicializar la aplicación
+// Inicializar la aplicacion
 const app = new ViajeMundo();
 
 // Hacer disponible globalmente para debugging
 window.ViajeMundo = app;
-
-// Exportar para uso en otros módulos si es necesario
-export default ViajeMundo;

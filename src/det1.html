@@ -8,6 +8,13 @@
   <meta name="author" content="Viaje Mundo">
   
   <title>París, Francia - Guía Completa de Viaje | Viaje Mundo</title>
+  
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
+  <link rel="preload" href="images/optimized/paris-hero-1200.avif" as="image" media="(min-width: 601px)">
+  <link rel="preload" href="images/optimized/paris-hero-400-vert.avif" as="image" media="(max-width: 600px)">
+  
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -53,7 +60,7 @@
           class="detail-image"
           width="1200"
           height="400"
-          loading="lazy"
+          fetchpriority="high"
         >
       </picture>
       <div class="detail-overlay">
@@ -92,14 +99,13 @@
             <div data-aos="fade-up">
               <h2>Descubre París en vídeo</h2>
               <div class="video-container">
-                <iframe 
-                  src="https://www.youtube.com/embed/AQ6GmpMu5_g" 
-                  title="París - La Ciudad de la Luz | Guía de Viaje"
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen
-                  loading="lazy">
-                </iframe>
+                <div style="text-align: center; padding: 2rem; background: #f5f5f5; border-radius: 8px;">
+                  <p style="margin-bottom: 1rem;">Ver video en YouTube:</p>
+                  <a href="https://www.youtube.com/watch?v=AQ6GmpMu5_g" target="_blank" rel="noopener noreferrer" 
+                     style="display: inline-block; background: #ff0000; color: white; padding: 12px 24px; border-radius: 4px; text-decoration: none;">
+                    ▶ Ver "París - La Ciudad de la Luz"
+                  </a>
+                </div>
               </div>
               <p style="font-size: var(--text-sm); color: var(--text-light); text-align: center; margin-top: var(--spacing-sm);">
                 Video: "París - La Ciudad de la Luz" - Una visión cinematográfica de la capital francesa
@@ -112,14 +118,15 @@
               <div class="image-gallery">
                 <figure>
                   <picture>
-                    <source type="image/avif" srcset="images/optimized/paris-louvre-400.avif 400w, images/optimized/paris-louvre-800.avif 800w, images/optimized/paris-louvre-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-                    <source type="image/webp" srcset="images/optimized/paris-louvre-400.webp 400w, images/optimized/paris-louvre-800.webp 800w, images/optimized/paris-louvre-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/avif" srcset="images/optimized/paris-louvre-800.avif" sizes="800px">
+                    <source type="image/webp" srcset="images/optimized/paris-louvre-800.webp" sizes="800px">
                     <img 
                       src="images/optimized/paris-louvre-800.jpg" 
                       alt="Pirámide de cristal del Museo del Louvre con la arquitectura clásica del palacio al fondo durante el día"
                       width="300"
                       height="200"
-                      loading="lazy"
+                      class="lazy-load"
+                      style="background-color: #f0f0f0;"
                     >
                   </picture>
                   <figcaption class="sr-only">Museo del Louvre</figcaption>
@@ -127,14 +134,15 @@
                 
                 <figure>
                   <picture>
-                    <source type="image/avif" srcset="images/optimized/paris-montmartre-400.avif 400w, images/optimized/paris-montmartre-800.avif 800w, images/optimized/paris-montmartre-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-                    <source type="image/webp" srcset="images/optimized/paris-montmartre-400.webp 400w, images/optimized/paris-montmartre-800.webp 800w, images/optimized/paris-montmartre-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/avif" srcset="images/optimized/paris-montmartre-800.avif" sizes="800px">
+                    <source type="image/webp" srcset="images/optimized/paris-montmartre-800.webp" sizes="800px">
                     <img 
                       src="images/optimized/paris-montmartre-800.jpg" 
                       alt="Basílica del Sagrado Corazón en Montmartre rodeada de calles empedradas y artistas callejeros"
                       width="300"
                       height="200"
-                      loading="lazy"
+                      class="lazy-load"
+                      style="background-color: #f0f0f0;"
                     >
                   </picture>
                   <figcaption class="sr-only">Montmartre y Sacré-Cœur</figcaption>
@@ -142,14 +150,15 @@
                 
                 <figure>
                   <picture>
-                    <source type="image/avif" srcset="images/optimized/paris-seine-400.avif 400w, images/optimized/paris-seine-800.avif 800w, images/optimized/paris-seine-1200.avif 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
-                    <source type="image/webp" srcset="images/optimized/paris-seine-400.webp 400w, images/optimized/paris-seine-800.webp 800w, images/optimized/paris-seine-1200.webp 1200w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px">
+                    <source type="image/avif" srcset="images/optimized/paris-seine-800.avif" sizes="800px">
+                    <source type="image/webp" srcset="images/optimized/paris-seine-800.webp" sizes="800px">
                     <img 
-                      src="images/optimized/paris-seine-800.jpg" 
+                      src="images/optimized/paris-seine-800.jpg"
                       alt="Río Sena con barcos navegando y los puentes históricos de París al atardecer"
                       width="300"
                       height="200"
-                      loading="lazy"
+                      class="lazy-load"
+                      style="background-color: #f0f0f0;"
                     >
                   </picture>
                   <figcaption class="sr-only">El río Sena</figcaption>
@@ -312,7 +321,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script type="module" src="js/main.js"></script>
+  <!-- Scripts optimizados para rendimiento -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>

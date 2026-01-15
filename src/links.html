@@ -8,6 +8,11 @@
   <meta name="author" content="Viaje Mundo">
   
   <title>Enlaces y Fuentes - Viaje Mundo</title>
+  
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
+  
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -322,7 +327,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script type="module" src="js/main.js"></script>
+  <!-- Scripts optimizados para rendimiento -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>
